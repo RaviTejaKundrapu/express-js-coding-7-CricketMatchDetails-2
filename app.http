@@ -1,0 +1,11 @@
+//API 1 : Returns a list of all the players in the player table\
+
+GET http://localhost:3000/players/
+
+###
+
+//API 2 : Returns a specific player based on the player ID
+
+GET http://localhost:3000/players/2
+
+###
