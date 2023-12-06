@@ -72,10 +72,11 @@ app.put('/players/:playerId/', async (request, response) => {
   SET player_name='${playerName}'
   WHERE player_id=${playerId};`
   const api_3_inDb = await db.run(updatePlayerQuery)
+  response.send('Player Details Updated')
 
-  const getUpdatedPlayerObjectQuery = `Select player_name from player_details where player_id=${playerId};`
-  const playerUpdatedDetails = await db.get(getUpdatedPlayerObjectQuery)
-  response.send({playerName: playerUpdatedDetails['player_name']})
+  // const getUpdatedPlayerObjectQuery = `Select player_name from player_details where player_id=${playerId};`
+  // const playerUpdatedDetails = await db.get(getUpdatedPlayerObjectQuery)
+  // response.send({playerName: playerUpdatedDetails['player_name']})
 })
 
 //API 4 :Returns the match details of a specific match
